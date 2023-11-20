@@ -20,27 +20,15 @@ public class MegabytesConverter {
         }
     }
 
-    public static void askForKilobytes() {
+    private static void askForKilobytes() {
         System.out.println("Type the kilobytes quantity you want to convert: ");
     }
 
-    private static int convertToMegabytes(int kilobytes) {
-        return kilobytes / 1024;
-    }
-
-    private static int remainingKilobytes(int kilobytes) {
-        return kilobytes % 1024;
-    }
-
-    public static void printMegaBytesAndKiloBytes(int kilobytes) {
-        /*
-        printMegaBytesAndKiloBytes(2500); → should print the following text: "2500 KB = 2 MB and 452 KB"
-        printMegaBytesAndKiloBytes(5000); → should print the following text: "5000 KB = 4 MB and 904 KB"
-         */
+    private static void printMegaBytesAndKiloBytes(int kilobytes) {
         if (kilobytes < 0) {
             System.out.println("Invalid Value");
         } else {
-            System.out.printf("%d KB = %d MB and %d KB", kilobytes, convertToMegabytes(kilobytes), remainingKilobytes(kilobytes));
+            System.out.printf("%d KB = %d MB and %d KB", kilobytes, kilobytes / 1024, kilobytes % 1024);
         }
     }
 
